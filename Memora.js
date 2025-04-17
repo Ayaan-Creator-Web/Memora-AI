@@ -267,7 +267,7 @@ async function response() {
                 }
                 newMessage.innerText = 'Searching...';
                 await delay(1500);
-                newMessage.innerHTML = `<image src="sunset${image}.jpg" width="400px" height="225px">`;
+                newMessage.innerHTML = `<image src="sunset${image}.jpg" width="400px" height="225px"> <p>Here is your picture of a sunset!</p>`;
             }
             else if (userInput.includes('ayaan')) {
                 const random = Math.random();
@@ -282,7 +282,7 @@ async function response() {
                 }
                 newMessage.innerText = 'Searching...';
                 await delay(1500);
-                newMessage.innerHTML = `<image src="ayaan${image}.jpg" width="400px" height="225px">`;
+                newMessage.innerHTML = `<image src="ayaan${image}.jpg" width="350px" height="225px"> <p>Here is your picture of Ayaan Khalique!</p>`;
             }
             else {
                 const random = Math.random();
