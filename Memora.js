@@ -255,9 +255,34 @@ async function response() {
                 }          
             }
             else if (userInput.includes('sunset')) {
+                const random = Math.random();
+                if (random < 1/3) {
+                    var image = 1;
+                }
+                else if (random > 1/3 && random < 2/3) {
+                    var image = 2;
+                }
+                else {
+                    var image = 3;
+                }
                 newMessage.innerText = 'Searching...';
                 await delay(1500);
-                newMessage.innerHTML = '<image src="sunset1.jpg" width="400px" height="225px">';
+                newMessage.innerHTML = `<image src="sunset${image}.jpg" width="400px" height="225px">`;
+            }
+            else if (userInput.includes('ayaan')) {
+                const random = Math.random();
+                if (random < 1/3) {
+                    var image = 1;
+                }
+                else if (random > 1/3 && random < 2/3) {
+                    var image = 2;
+                }
+                else {
+                    var image = 3;
+                }
+                newMessage.innerText = 'Searching...';
+                await delay(1500);
+                newMessage.innerHTML = `<image src="ayaan${image}.jpg" width="400px" height="225px">`;
             }
             else {
                 const random = Math.random();
