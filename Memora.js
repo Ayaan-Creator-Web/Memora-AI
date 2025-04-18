@@ -162,6 +162,22 @@ async function response() {
                 await delay(1500);
                 newMessage.innerHTML = `<image src="ayaan${image}.jpg" width="350px" height="225px"> <p>Here is your picture of Ayaan Khalique!</p>`;
             }
+            else if (userInput.includes('pic')) {
+                await delay(1500);
+                var memora = responseStart + 'Sorry, I cannot find picture of that. Is there anything you would like me to help you with?'
+            }
+            else if (userInput.includes('muhammad') || userInput.includes('bashir')) {
+                const random = Math.random();
+                if (random < 1/3) {
+                    var memora = 'Muhammad Bashir is a 78 year-old is a retired professor of chemistry turned photographer, sharing his photos through professional film making. In his spare time he likes to play chess and words with friends with his grandson.'
+                }
+                else if (random > 1/3 && random < 2/3) {
+                    var memora = 'Muhammad Bashir, a 78-year-old retired chemistry professor, has transitioned into photography, showcasing his work through professional filmmaking. In his free time, he enjoys playing chess and Words with Friends with his grandson.'
+                }
+                else {
+                    var memora = 'Muhammad Bashir, 78, is a retired chemistry professor turned photographer who shares his work through filmmaking. He enjoys chess and Words with Friends with his grandson.';
+                }
+            }
             else if (userInput.includes('hey') || userInput.includes('hello') || userInput.includes('hi')) {
                 const random = Math.random();
                 if (random < 1/3) {
@@ -296,6 +312,9 @@ async function response() {
                 else {
                     var memora = responseStart + "It sounds like these pictures brought you some real happiness!"
                 }          
+            }
+            else if (userInput.includes('ok') || userInput.includes('fine')) {
+                var memora = "Alright! What's on your mind, Ayaan?";
             }
             else {
                 const random = Math.random();
