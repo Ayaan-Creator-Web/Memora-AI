@@ -192,7 +192,7 @@ async function response() {
                     var memora = responseStart + 'You are welcome! Is there anything you would like me to help you with?'
                 }
                 else if (random > 1/3 && random < 2/3) {
-                    var memora = responseStart + 'Welcome as always! let me know if you need any mroe help';
+                    var memora = responseStart + 'Welcome as always! let me know if you need any more help';
                 }
                 else {
                     var memora = responseStart + "Hey, no worries! Need anything else?"
