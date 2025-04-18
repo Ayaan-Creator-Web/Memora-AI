@@ -1,5 +1,5 @@
 var messages = 0
-
+const searching = 'searching';
 var wait = 0;
 
 async function userMessage() {
@@ -163,7 +163,8 @@ async function response() {
                 newMessage.innerHTML = `<image src="ayaan${image}.jpg" width="350px" height="225px"> <p>Here is your picture of Ayaan Khalique!</p>`;
             }
             else if (userInput.includes('recent') || userInput.includes('vid')) {
-                alert('Videos might take up to 5 seconds to load');
+                //alert('Videos might take more than 5 seconds to load');
+
                 await delay(4750);
                 newMessage.innerHTML = `<video width="320" height="240" autoplay muted controls>
                                         <source src="recent.mp4" type="video/mp4">
@@ -171,7 +172,7 @@ async function response() {
                                         </video>
                                         <p>This is a recent and downloadable video taken by Muhammad Bashir.</p>`;
             }
-            else if (userInput.includes('pic')) {
+            else if (userInput.includes('pic') || userInput.includes('pho')) {
                 await delay(1500);
                 var memora = responseStart + 'Sorry, I cannot find picture of that. Is there anything you would like me to help you with?'
             }
