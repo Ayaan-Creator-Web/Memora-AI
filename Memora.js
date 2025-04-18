@@ -147,7 +147,7 @@ async function response() {
                 await delay(1500);
                 newMessage.innerHTML = `<image src="sunset${image}.jpg" width="400px" height="225px"> <p>Here is your picture of a sunset!</p>`;
             }
-            else if (userInput.includes('aya') &&  userInput.includes('n')) {
+            else if (userInput.includes('aya') && userInput.includes('n') || userInput.includes('grandson')) {
                 const random = Math.random();
                 if (random < 1/3) {
                     var image = 1;
@@ -161,6 +161,15 @@ async function response() {
                 //newMessage.innerText = 'Searching...';
                 await delay(1500);
                 newMessage.innerHTML = `<image src="ayaan${image}.jpg" width="350px" height="225px"> <p>Here is your picture of Ayaan Khalique!</p>`;
+            }
+            else if (userInput.includes('recent') || userInput.includes('vid')) {
+                alert('Videos might take up to 5 seconds to load');
+                await delay(4750);
+                newMessage.innerHTML = `<video width="320" height="240" autoplay muted controls>
+                                        <source src="recent.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                        <p>This is a recent and downloadable video taken by Muhammad Bashir.</p>`;
             }
             else if (userInput.includes('pic')) {
                 await delay(1500);
