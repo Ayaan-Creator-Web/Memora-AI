@@ -87,7 +87,7 @@ async function response() {
         var responseStart = 'Memora: ';
 
         var newMessage = document.createElement('p');
-        newMessage.classList.add('lumenMessage');
+        newMessage.classList.add('memoraMessage');
         newMessage.innerText = memora;
 
         var userInput = document.querySelector('#userMessageInput').value.toLowerCase();
@@ -100,13 +100,14 @@ async function response() {
         
         if (userInput) {
             if (userInput.includes('repeat after me')) {
-                var repeatedResponse = userInput.replace(/repeat after me/gi, '');
+                var repeatedResponse = userInput.replace(/repeat after me/gi, 'Though I am built to help you find some pictures, I will repeat it anyway: ');
                 var memora = responseStart + repeatedResponse
             }
             else if (userInput.includes('repeat')) {
                 var repeatedResponse = userInput.replace(/repeat/gi, '');
                 var memora = responseStart + repeatedResponse
             }
+            
             else if (userInput.includes('lol') || userInput.includes('laugh out loud') || userInput.includes('lmao') || userInput.includes('funny') || userInput.includes('laugh')) {
                 const random = Math.random();
                 if (random < 1/3) {
@@ -128,8 +129,38 @@ async function response() {
                     var memora = responseStart + "I'm sorry to hear that. If there's something I can improve or do differently, feel free to let me know—I'm here to help however I can"
                 }
                 else {
-                    var lummemoraen = responseStart + "That's okay—I'm here to assist regardless. If there's anything specific you'd like to talk about or any way I can be helpful, just let me know."
+                    var memora = responseStart + "That's okay—I'm here to assist regardless. If there's anything specific you'd like to talk about or any way I can be helpful, just let me know."
                 }          
+            }
+            else if (userInput.includes('sunset')) {
+                const random = Math.random();
+                if (random < 1/3) {
+                    var image = 1;
+                }
+                else if (random > 1/3 && random < 2/3) {
+                    var image = 2;
+                }
+                else {
+                    var image = 3;
+                }
+                //newMessage.innerHTML = '<p>Searching...</p>';
+                await delay(1500);
+                newMessage.innerHTML = `<image src="sunset${image}.jpg" width="400px" height="225px"> <p>Here is your picture of a sunset!</p>`;
+            }
+            else if (userInput.includes('aya') &&  userInput.includes('n')) {
+                const random = Math.random();
+                if (random < 1/3) {
+                    var image = 1;
+                }
+                else if (random > 1/3 && random < 2/3) {
+                    var image = 2;
+                }
+                else {
+                    var image = 3;
+                }
+                //newMessage.innerText = 'Searching...';
+                await delay(1500);
+                newMessage.innerHTML = `<image src="ayaan${image}.jpg" width="350px" height="225px"> <p>Here is your picture of Ayaan Khalique!</p>`;
             }
             else if (userInput.includes('hey') || userInput.includes('hello') || userInput.includes('hi')) {
                 const random = Math.random();
@@ -153,6 +184,18 @@ async function response() {
                 }
                 else {
                     var memora = responseStart + "Hey! How was your sleep?"
+                }
+            }
+            else if (userInput.includes('thank') || userInput.includes('thx') || userInput.includes('thnx')) {
+                const random = Math.random();
+                if (random < 1/3) {
+                    var memora = responseStart + 'You are welcome! Is there anything you would like me to help you with?'
+                }
+                else if (random > 1/3 && random < 2/3) {
+                    var memora = responseStart + 'Welcome as always! let me know if you need any mroe help';
+                }
+                else {
+                    var memora = responseStart + "Hey, no worries! Need anything else?"
                 }
             }
             else if (userInput.includes('greeting') || userInput.includes('greetings') || userInput.includes('greet')) {
@@ -253,36 +296,6 @@ async function response() {
                 else {
                     var memora = responseStart + "It sounds like these pictures brought you some real happiness!"
                 }          
-            }
-            else if (userInput.includes('sunset')) {
-                const random = Math.random();
-                if (random < 1/3) {
-                    var image = 1;
-                }
-                else if (random > 1/3 && random < 2/3) {
-                    var image = 2;
-                }
-                else {
-                    var image = 3;
-                }
-                newMessage.innerText = 'Searching...';
-                await delay(1500);
-                newMessage.innerHTML = `<image src="sunset${image}.jpg" width="400px" height="225px"> <p>Here is your picture of a sunset!</p>`;
-            }
-            else if (userInput.includes('ayaan')) {
-                const random = Math.random();
-                if (random < 1/3) {
-                    var image = 1;
-                }
-                else if (random > 1/3 && random < 2/3) {
-                    var image = 2;
-                }
-                else {
-                    var image = 3;
-                }
-                newMessage.innerText = 'Searching...';
-                await delay(1500);
-                newMessage.innerHTML = `<image src="ayaan${image}.jpg" width="350px" height="225px"> <p>Here is your picture of Ayaan Khalique!</p>`;
             }
             else {
                 const random = Math.random();
